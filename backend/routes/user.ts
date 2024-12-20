@@ -40,7 +40,7 @@ route.post('/signup',async (c) => {
       const userId = user.id;
       const token = await sign({userId},c.env.JWT_SECRET);
       return c.json({  
-        result: 'Signin Successfully ',token
+        result: 'Signup Successfully ',token
       }, 201)
     }else{
       return c.json({ 
