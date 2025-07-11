@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Highfield';
+    src: url('/src/assets/fonts/hf/Highfield Thin.otf') format('opentype'),
+         url('/src/assets/fonts/hf/Highfield Thin.ttf') format('truetype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'MoonBerry';
+    src: url('/src/assets/fonts/moon/Moon-Berry-DEMO-BF66a1cd4054f86.otf') format('opentype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+  }
+    
+  
+  

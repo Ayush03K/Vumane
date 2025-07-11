@@ -13,7 +13,7 @@ const route = new Hono<{
     userId : string
   }
 }>();
-route.use('/api/v1/blog/*', authMiddleware);
+route.use('/api/v1/blog/*', authMiddleware); 
 //add pagination
 route.get('/bulk',async (c) => {
   const prisma = new PrismaClient({
