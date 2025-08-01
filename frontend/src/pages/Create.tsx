@@ -1,35 +1,79 @@
+import { Link } from "react-router-dom";
+import RCard from "../components/RCard";
+import Write from "../components/Write";
+import { Feather } from "lucide-react";
+import ButtonB from "../components/ButtonB";
 
 export default function Create() {
   return (
-    <div className="bg-moong h-full w-full text-text px-56 py-6 flex flex-col justify-center gap-10 ">
-        <div className="">
-            <div className="text-6xl font-serif py-2">Create Your Narrative</div>
-            <div className="text-2xl font-serif">Channel the spirit of Kafka and Dostoevsky</div>
+    <div className="bg-[rgb(0,1,2)] h-full w-full">
+      {/* Header */}
+      <div className="flex bg-[rgb(0,1,2,0.20)] gap-[20px] fixed z-50 w-full backdrop-blur-md h-[8%] justify-between p-10 items-center pr-[2%]">
+        <Link to="/">
+          <div className="text-[#FFCCCC] text-xl font-semibold tracking-wide flex gap-[15px]">
+            <div className="flex">
+              <p>...</p>
+              <Feather />
+            </div>
+            Vumane
+          </div>
+        </Link>
+        <div className="flex gap-4">
+          <Link to="/categories">
+            <ButtonB title="Categories" />
+          </Link>
+          <Link to="/tags">
+            <ButtonB title="Tags" />
+          </Link>
         </div>
-        <div className="">
-            <div className="text-2xl text-left font-serif py-2">Title</div>
-            <input className="h-16 w-full bg-lightgray rounded-md text-xl" placeholder="    Enter your title"></input>
+      </div>
+      <div className=" text-center">
+        <div className="flex justify-center pt-[6%] font-bold gap-4">
+          <div className="text-6xl pt-8 pb-2 text-text">Craft Your</div>
+          <div className="text-6xl pt-8 pb-2 text-[rgba(255,0,0,0.5)]">
+            Truth
+          </div>
         </div>
-        <div>
-            <div className="text-2xl font-serif py-2">Category</div>
-            <input className="h-16 w-full bg-lightgray rounded-md font-serif text-xl" placeholder="    category"></input>
+        <div className="text-2xl font-semibold text-[#666666]">
+          Let your thoughts flow like Dostoevsky's confessions
         </div>
-        <div>
-            <div className="text-2xl font-serif py-2">Cover Image</div>
-            <input type="file" ></input>
+      </div>
+      <div className="flex flex-wrap justify-between p-[100px] gap-10">
+        <Write />
+        <div className="flex flex-col gap-10 ">
+          <RCard
+            hw="w-[278px] "
+            title="Word Count:"
+            data={["Est. Read Time:", "Characters:"]}
+          />
+          <RCard
+            hw="w-[278px] "
+            title="Writing Tips"
+            data={[
+              "Start with a compelling hook that draws readers into the existential depths",
+              "Use concrete examples to illustrate abstract philosophical concepts",
+              "Connect literary themes to contemporary issues and experiences",
+              "End with thought-provoking questions or insights",
+            ]}
+          />
+          <RCard
+            hw="w-[278px] "
+            title="Markdown Guide"
+            data={[
+              "**Bold**",
+              "*Italic*",
+              "## Heading",
+              "> Quote",
+              "[Link](URL)",
+            ]}
+          />
+          <RCard
+            hw="w-[278px] "
+            title="Recent Drafts"
+            data={["The Absurd in Digital Life Draft • 2 hours ago"]}
+          />
         </div>
-        <div>
-            <div className="text-2xl font-serif py-2">Content</div>
-            <input className="h-80 w-full bg-lightgray  rounded-md font-serif text-xl" placeholder="    Begin your narrative here..."></input>
-        </div>
-        <div>
-            <div className="text-2xl font-serif py-2">Tags</div>
-            <input className="h-16 w-full bg-lightgray rounded-md font-serif text-xl" placeholder="    Add tags separated by commas..."></input>
-        </div>
-        <div className="flex flex-row gap-5 font-serif">
-            <div className="bg-slate-700 p-5 h-16 w-28 text-center rounded-md">Publish</div>
-            <div className="p-5 h-16 w-32 text-center border-2 stone-300 rounded-md">Save Draft</div>
-        </div>
+      </div>
     </div>
-  )
+  );
 }

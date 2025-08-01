@@ -1,19 +1,71 @@
-function BCard() {
-  return (
-    <div className="relative h-[600px] w-[400px] px-6 py-4 text-white font-medium rounded-2xl
-      bg-[rgba(0,40,80,0.15)] backdrop-blur-xl border border-white/10
-      shadow-[inset_0_0_0_0.5px_rgba(255,255,255,0.1),0_0_15px_rgba(0,80,255,0.2)]
-      transition duration-300 ease-in-out overflow-hidden">
-      
-      {/* Top light reflection */}
-      <div className="absolute top-0 left-0 w-full h-1/2 bg-white/1 blur-2xl opacity-40 pointer-events-none rounded-t-2xl z-0" />
+interface ipCard {
+  hw?: string;
+  content?: string;
+  tags?: string;
+  title?: string;
+  subtitle?: string;
+  authorId?: string;
+  likes?: string;
+}
 
-      {/* Your content */}
-      <div className="relative z-10">
-        Sign Up
+function BCard({
+  hw,
+  content,
+  tags,
+  title,
+  authorId,
+  likes,
+}: ipCard) {
+  return (
+    <div
+      className={`relative ${hw} px-6 py-4 text-white font-medium rounded-2xl
+        bg-[rgba(0,40,80,0.15)] backdrop-blur-xl 
+        shadow-[inset_0_0_0_0.5px_rgba(255,255,255,0.1)]
+        transition duration-300 ease-in-out overflow-hidden`}
+    >
+      <div className="absolute top-0 left-0 w-full h-1/2 bg-white/1 blur-2xl opacity-40 pointer-events-none rounded-t-2xl z-0 " />
+
+      <div className="relative z-10 flex gap-5">
+        {title && (
+          <img
+            src="https://plus.unsplash.com/premium_photo-1681488240099-f1f8585ef3e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+            className="w-[40%] h-[250px] object-cover rounded-xl"
+            alt={title}
+          />
+        )}
+        <div className="flex flex-col justify-center gap-3">
+        {title && <div className="text-xl font-semibold">{title}</div>}
+
+        {/* Tags */}
+        {tags && (
+          <div className="flex flex-wrap gap-2 text-sm text-white/60">
+            {tags.split(" ").map((tag, index) => (
+              <span
+                key={index}
+                className="px-2 py-1 bg-white/10 rounded-full border border-white/10"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Content */}
+        {content && (
+          <p className="text-sm text-white/70">
+            {content.substring(0, 160)}...
+          </p>
+        )}
+
+        <div className="flex justify-between text-sm text-white/40 mt-2">
+          <span>By {authorId || "Anonymous"}</span>
+          {likes && <span>❤️ {likes}</span>}
+        </div>
+        </div>
+        
       </div>
     </div>
-  )
+  );
 }
 
 export default BCard;

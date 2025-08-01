@@ -3,6 +3,7 @@ import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 import { decode, sign, verify } from 'hono/jwt'
 import { signinInput, signupInput } from 'vumane-common'
+import { cors } from 'hono/cors'
 
 const route = new Hono<{
   Bindings:{
@@ -10,7 +11,10 @@ const route = new Hono<{
     DATABASE_URL:string
   }
 }>()
-
+route.use(cors({
+  origin: 'http://localhost:5173', // allow this frontend
+  credentials: true               // allow cookies/authorization headers
+}));
 route.post('/signup',async (c) => {
   const prisma = new PrismaClient({
     datasourceUrl : c.env.DATABASE_URL,

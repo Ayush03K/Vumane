@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors:{
-        primary:'#191B20',
-        onwghite:'#CDCABB',
+        primary:'bg-[rgb(0,1,2)]',
+        onwghite:'#FFCCCC',
         wood:"#2e2d32",
         moong:"#171717",
         lightgray:"#262626",
@@ -31,5 +31,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }

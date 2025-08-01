@@ -17,7 +17,8 @@ export const authMiddleware:MiddlewareHandler = async (c,next) => {
     const prisma =new PrismaClient({
         datasourceUrl : c.env.DATABASE_URL
     }).$extends(withAccelerate());
-    const token = c.req.header('Authorization') || "";
+    const authHeader = c.req.header('Authorization') || '';
+  const token = authHeader.split(' ')[1];
     if(!token){
         c.status(401);
         return c.json({error : "unauthorized"});
