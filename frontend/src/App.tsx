@@ -1,26 +1,12 @@
 import "./App.css";
-import {
-  BrowserRouter,
-  Navigate,
-  Route,
-  RouterProvider,
-  Routes,
-} from "react-router-dom";
-import BCard from "./components/BCard";
-import BkCard from "./components/BkCard";
-import ButtonR from "./components/ButtonR";
-import RCard from "./components/RCard";
-import Footer from "./components/Footer";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+
 import BlogDetails from "./pages/BlogDetails";
 import Create from "./pages/Create";
 import Home from "./pages/Home";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
-import Input from "./components/Input";
-import ButtonB from "./components/ButtonB";
-import Headers from "./components/Headers";
-import Heading from "./components/Heading";
-import Hero from "./components/Hero";
+
 import Categories from "./pages/Categories";
 import Tags from "./pages/Tags";
 import IndCategory from "./pages/IndCategory";

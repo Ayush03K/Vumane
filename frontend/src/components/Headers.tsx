@@ -1,9 +1,10 @@
-import { Dot, Feather, UserCheck, UserCheck2 } from "lucide-react";
+import { Feather, UserCheck2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { BACKEND_URL } from "../config";
 interface Blog {
   id: string;
   title: string;
@@ -17,7 +18,7 @@ export default function Header() {
   const [showUserMenu, setShowUserMenu] = useState(false);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8787/api/v1/blog/bulk").then((response) => {
+    axios.get(`${BACKEND_URL}/api/v1/blog/bulk`).then((response) => {
       console.log(response.data.result);
       setAllBlogs(response.data.result);
     });
@@ -43,8 +44,8 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full backdrop-blur-lg bg-[rgba(0,0,0,0.6)] border-white/10 shadow-md">
-      <div className="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between text-white font-medium">
+    <header className="fixed top-0 left-0 z-50 w-screen backdrop-blur-lg bg-[rgba(0,0,0,0.6)] border-white/10 shadow-md">
+      <div className="max-w-full mx-auto px-6 h-20 flex items-center justify-evenly text-white font-medium">
         {/* Logo */}
         <div className="text-[#FFCCCC] text-xl font-semibold tracking-wide flex gap-[10px]">
           <div className="flex">
@@ -61,7 +62,7 @@ export default function Header() {
             placeholder="Search Blog_"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="bg-transparent border-white/10 shadow-md text-white placeholder-white w-96 px-2 py-1 rounded outline-none"
+            className="bg-transparent border-white/10 shadow-md text-white placeholder-white w-full px-2 py-1 rounded outline-none"
           />
         </div>
         {showPopup && (

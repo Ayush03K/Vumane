@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader2 from "../components/Loader2";
 import Loader3 from "../components/Loader3";
+import { BACKEND_URL } from '../config'
 interface ipCT {
   hw?: string;
 }
@@ -20,7 +21,7 @@ export default function Tags({ hw }: ipCT) {
       setLoading(true);
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8787/api/v1/blog/bulk"
+          `${BACKEND_URL}/api/v1/blog/bulk`
         );
         const tags = response.data.result.map((blog: any) => blog.tags) || [];
         setTags(tags);
@@ -131,7 +132,7 @@ export default function Tags({ hw }: ipCT) {
                     <MCard
                       key={index}
                       tags={tag}
-                      hw="w-[400px] h-[70px] hover:bg-[rgb(255,0,0,0.20)]"
+                      hw="w-[395px] h-[70px] hover:bg-[rgb(255,0,0,0.20)]"
                     />
                   </Link>
                 ))}

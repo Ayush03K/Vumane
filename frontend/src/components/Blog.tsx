@@ -3,6 +3,7 @@ import BkCard from "./BkCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
+import { BACKEND_URL } from "../config";
 export default function () {
   const [loading, setLoading] = useState(true);
   const [featured, setFeatured] = useState<any[]>([]);
@@ -12,7 +13,7 @@ export default function () {
       setLoading(true);
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8787/api/v1/blog/bulk"
+          `${BACKEND_URL}/api/v1/blog/bulk`
         );
         const blogData = response.data.result || [];
         const sortedByLikes = [...blogData].sort((a, b) => b.like - a.like);

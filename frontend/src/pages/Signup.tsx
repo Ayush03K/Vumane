@@ -3,8 +3,9 @@ import Input from "../components/Input";
 import ButtonR from "../components/ButtonR";
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { BACKEND_URL } from "../config";
 
 export default function Signin() {
   const [name, setName] = useState("");
@@ -13,8 +14,7 @@ export default function Signin() {
   const navigate = useNavigate();
   const handleSignup = async () => {
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8787/api/v1/user/signup",
+      const response = await axios.post(`${BACKEND_URL}/api/v1/user/signup`,
         {
           name,
           email,
@@ -80,8 +80,14 @@ export default function Signin() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <div className="flex justify-center">
+            <div className="flex flex-col justify-center items-center gap-1">
               <ButtonR title="Signup" hw="w-[80%]" onClick={handleSignup} />
+              <div className="flex gap-2 text-onwghite">
+                Already have an account ?
+                <Link to={"/signup"}>
+                  <div className="underline text-onwghite">Login</div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

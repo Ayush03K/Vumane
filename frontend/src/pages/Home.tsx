@@ -8,17 +8,17 @@ import Qoutes from "../components/Qoutes";
 
 export default function Home() {
   return (
-    <div>
+    <div className="w-full">
       <div className="bg-primary">
         <Headers />
         <Hero />
         <Blog />
         <div className="p-4">
           <div className=" pt-14 pl-4 flex gap-2 flex-row ">
-            <h1 className="text-7xl text-onwghite font-bold pr-[5px] ">
+            <h1 className="text-6xl text-onwghite font-bold pr-[5px] ">
               Featured
             </h1>
-            <h1 className="text-7xl text-[rgba(255,0,0,0.5)] font-bold pl-[5px] ">
+            <h1 className="text-6xl text-[rgba(255,0,0,0.5)] font-bold pl-[5px] ">
               Categories
             </h1>
             <h1 className="text-7xl text-[rgba(255,0,0,0.5)] font-bold animate-blink">

@@ -2,9 +2,10 @@ import { useState } from "react";
 import bg_image from "../assets/images/kseniya-lapteva-lpo3y90Yuig-unsplash.jpg";
 import Input from "../components/Input";
 import ButtonB from "../components/ButtonB";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { BACKEND_URL } from "../config";
 
 export default function Signin() {
   const [email, setEmail] = useState("");
@@ -13,7 +14,7 @@ export default function Signin() {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8787/api/v1/user/signin",
+        `${BACKEND_URL}/api/v1/user/signin`,
         {
           email,
           password,
@@ -37,7 +38,6 @@ export default function Signin() {
         alt="Background"
         className="absolute inset-0 w-full h-full object-cover"
       />
-
 
       <div className="absolute inset-0 bg-black/60 z-0" />
 
@@ -71,12 +71,18 @@ export default function Signin() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <div className="flex justify-center">
+            <div className="flex flex-col items-center justify-center gap-1">
               <ButtonB
                 title="Signin"
                 hw="w-[80%] shadow"
                 onClick={handleLogin}
               />
+              <div className="flex gap-2 text-onwghite">
+                Don't have an account ?
+                <Link to={"/signup"}>
+                  <div className="underline text-onwghite">Signup</div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

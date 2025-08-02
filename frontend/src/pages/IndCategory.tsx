@@ -22,6 +22,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import MCard from "../components/MCard";
 import Skeleton2 from "../components/Skeleton2";
+import { BACKEND_URL } from "../config";
 
 // interface Blogs {
 //   title: string;
@@ -41,7 +42,7 @@ export default function IndCategory() {
     const fetchBlogs = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8787/api/v1/blog/bulk"
+          `${BACKEND_URL}/api/v1/blog/bulk`
         );
         const filtered = response.data.result.filter(
           (blog: { category: string }) => blog.category === category

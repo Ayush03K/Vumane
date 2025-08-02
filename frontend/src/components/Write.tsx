@@ -5,6 +5,7 @@ import Input from "../components/Input";
 import TextArea from "../components/TextArea";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { BACKEND_URL } from "../config";
 
 export default function () {
   const [title, setTitle] = useState("");
@@ -15,7 +16,7 @@ export default function () {
   const handleTruth = async () => {
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8787/api/v1/blog",
+        `${BACKEND_URL}/api/v1/blog`,
         {
           title,
           category,

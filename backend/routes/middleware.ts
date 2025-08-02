@@ -18,7 +18,7 @@ export const authMiddleware:MiddlewareHandler = async (c,next) => {
         datasourceUrl : c.env.DATABASE_URL
     }).$extends(withAccelerate());
     const authHeader = c.req.header('Authorization') || '';
-  const token = authHeader.split(' ')[1];
+    const token = authHeader.split(' ')[1];
     if(!token){
         c.status(401);
         return c.json({error : "unauthorized"});

@@ -7,6 +7,7 @@ import axios from "axios";
 import MCard from "../components/MCard";
 import Loader2 from "../components/Loader2";
 import Loader3 from "../components/Loader3";
+import { BACKEND_URL } from "../config";
 interface ipCT {
   hw?: string;
 }
@@ -19,7 +20,7 @@ export default function Categories({ hw }: ipCT) {
     const fetchCategories = async ()=>{
       setLoading(true);
       try{
-        const response = await axios.get("http://127.0.0.1:8787/api/v1/blog/bulk");
+        const response = await axios.get(`${BACKEND_URL}/api/v1/blog/bulk`);
         const category = response.data.result.map((blog : any)=>blog.category) || [];
         setCategories(category);
         setFeatured(category.slice(0,3));
@@ -105,7 +106,7 @@ export default function Categories({ hw }: ipCT) {
         <MCard
           key={value}
           categories={category}
-          hw="w-[380px] h-[220px] shadow-[rgb(0,0,0)] hover:bg-[rgb(225,0,0,0.20)]"
+          hw="w-[375px] h-[220px] shadow-[rgb(0,0,0)] hover:bg-[rgb(225,0,0,0.20)]"
         />
       </Link>
 ))}

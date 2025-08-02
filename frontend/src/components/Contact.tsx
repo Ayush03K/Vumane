@@ -9,7 +9,6 @@ export default function Contact() {
         <div className="flex gap-2.5 pt-5">
             <img src="https://plus.unsplash.com/premium_photo-1700131051396-307a36e3ef85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D" alt="fllow" className="object-cover pt-12 h-96 w-3/12"/>
             <img src="https://plus.unsplash.com/premium_photo-1724824053224-40d726301acf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTN8fHxlbnwwfHx8fHw%3D" alt="fllow" className="object-cover pt-12 h-96 w-3/12"/>
-            <img src="https://plus.unsplash.com/premium_photo-1663134149019-284682ece04c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FtZXJhfGVufDB8fDB8fHww" alt="fllow" className="object-cover pt-12 h-96 w-3/12"/>
             <img src="https://images.unsplash.com/photo-1734279135113-8bd58bc02b69?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzMHx8fGVufDB8fHx8fA%3D%3D" alt="fllow" className="object-cover pt-12 h-96 w-3/12"/>
         </div>
     </div>

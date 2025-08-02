@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import { BACKEND_URL } from "../config";
 interface Blog {
   title: string;
   content: string;
@@ -21,7 +22,7 @@ export default function BlogDetails() {
 
   const [blog, setBlog] = useState<Blog | null>(null);
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8787/api/v1/blog/${id}`).then((response) => {
+    axios.get(`${BACKEND_URL}/api/v1/blog/${id}`).then((response) => {
       const blog = response.data.result || {};
       setBlog(blog);
       console.log(blog);
@@ -62,7 +63,7 @@ export default function BlogDetails() {
         <>
           {/* Breadcrumb */}
           <div className="text-gray-400 fixed flex py-6 pl-44 z-50 w-full backdrop-blur-md bg-[rgba(0,0,0,0.6)] gap-[5px]">
-            <Link to={"/"} className="hover:text-[rgb(225,0,0,0.7)]">
+            <Link to={"/dashboard"} className="hover:text-[rgb(225,0,0,0.7)]">
               Home
             </Link>
             /

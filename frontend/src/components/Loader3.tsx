@@ -1,4 +1,4 @@
-import { Circle, CircleSmall, Ellipsis } from "lucide-react";
+import { CircleSmall } from "lucide-react";
 
 export default function Loader3() {
   return (

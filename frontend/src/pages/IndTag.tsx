@@ -1,4 +1,3 @@
-import { BiBulb } from "react-icons/bi";
 import BCard from "../components/BCard";
 import ButtonB from "../components/ButtonB";
 import ButtonR from "../components/ButtonR";
@@ -7,6 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Skeleton1 from "../components/Skeleton1";
+import { BACKEND_URL } from "../config";
 
 export default function IndTag() {
   const { tag } = useParams();
@@ -16,7 +16,7 @@ export default function IndTag() {
     const fetchBlogs = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8787/api/v1/blog/bulk"
+          `${BACKEND_URL}/api/v1/blog/bulk`
         );
         const blogs = response.data.result;
         const filtered = blogs.filter((blog: { tags: string }) =>
