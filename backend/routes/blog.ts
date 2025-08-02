@@ -15,6 +15,7 @@ const route = new Hono<{
     userId: string;
   };
 }>();
+route.use("/*",cors());
 route.use("/api/v1/blog/*", authMiddleware);
 route.use(
   "*",
