@@ -28,7 +28,7 @@ function BCard({
       <div className="relative z-10 flex gap-5">
         {title && (
           <img
-            src="https://plus.unsplash.com/premium_photo-1681488240099-f1f8585ef3e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+            src="https://images.pexels.com/photos/128428/pexels-photo-128428.jpeg"
             className="w-[40%] h-[250px] object-cover rounded-xl"
             alt={title}
           />

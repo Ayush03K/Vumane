@@ -20,8 +20,8 @@ function BkCard({ tags, title, subtitle, author, likes }: ipCard) {
 
       <div className="relative z-10 flex flex-col gap-8">
         <img
-          src="https://images.unsplash.com/photo-1726944350425-9109d1c0806d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D"
-          className="h-[240px] w-full object-cover rounded-xl"
+          src="https://images.pexels.com/photos/128428/pexels-photo-128428.jpeg"
+          className="h-full w-full object-cover rounded-xl"
         />
 
         <div className="flex flex-wrap gap-2">
@@ -39,7 +39,7 @@ function BkCard({ tags, title, subtitle, author, likes }: ipCard) {
           {title}
         </div>
 
-        <div className="text-[#cccccc] text-sm font-normal line-clamp-3">
+        <div className="text-[#cccccc] text-sm font-normal">
           {subtitle?.substring(0, 150)}...
         </div>
 

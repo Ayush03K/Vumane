@@ -137,7 +137,7 @@ export default function BlogDetails() {
             <div className="relative p-4 bg-[rgba(0,1,2,0.15)] backdrop-blur-xl border-y border-white/10 transition duration-300 ease-in-out overflow-hidden hover:scale-[101%]">
               <div className="absolute inset-0 overflow-hidden z-0">
                 <img
-                  src="https://plus.unsplash.com/premium_photo-1681488240099-f1f8585ef3e5?w=1000&auto=format&fit=crop&q=80"
+                  src="https://images.pexels.com/photos/128428/pexels-photo-128428.jpeg"
                   alt="Blurred background"
                   className="w-full h-full object-cover blur-md scale-110"
                 />
@@ -146,7 +146,7 @@ export default function BlogDetails() {
 
               <div className="relative z-10 flex justify-center items-center">
                 <img
-                  src="https://plus.unsplash.com/premium_photo-1681488240099-f1f8585ef3e5?w=1000&auto=format&fit=crop&q=80"
+                  src="https://images.pexels.com/photos/128428/pexels-photo-128428.jpeg"
                   alt="Focused image"
                   className="w-[60%] object-contain rounded-2xl shadow-lg"
                 />
