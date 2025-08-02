@@ -84,7 +84,7 @@ export default function Signin() {
               <ButtonR title="Signup" hw="w-[80%]" onClick={handleSignup} />
               <div className="flex gap-2 text-onwghite">
                 Already have an account ?
-                <Link to={"/signup"}>
+                <Link to={"/signin"}>
                   <div className="underline text-onwghite">Login</div>
                 </Link>
               </div>
