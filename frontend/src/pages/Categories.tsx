@@ -8,11 +8,8 @@ import MCard from "../components/MCard";
 import Loader2 from "../components/Loader2";
 import Loader3 from "../components/Loader3";
 import { BACKEND_URL } from "../config";
-interface ipCT {
-  hw?: string;
-}
 
-export default function Categories({ hw }: ipCT) {
+export default function Categories() {
   const [loading,setLoading] = useState(true);
   const [categories,setCategories] = useState<string[]>([]);
   const [featured,setFeatured] = useState<string[]>([]);

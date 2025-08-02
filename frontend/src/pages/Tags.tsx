@@ -8,11 +8,9 @@ import axios from "axios";
 import Loader2 from "../components/Loader2";
 import Loader3 from "../components/Loader3";
 import { BACKEND_URL } from '../config'
-interface ipCT {
-  hw?: string;
-}
 
-export default function Tags({ hw }: ipCT) {
+
+export default function Tags() {
   const [loading, setLoading] = useState(true);
   const [tags, setTags] = useState<string[]>([]);
   const [toptags, setTopTags] = useState<string[]>([]);

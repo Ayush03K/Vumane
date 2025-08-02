@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
 import { BACKEND_URL } from "../config";
 interface Blog {
   id: string;
